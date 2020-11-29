@@ -175,13 +175,15 @@ padding: 46px 22px 22px;
   position: fixed;
   left: 0;
   top: 0;
-  padding-top: 10%;
 }
 .popupContent{
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   width: 80%;
-  margin: 0 auto;
-  padding: 120px 0px;
+  /* margin: 0 auto;
+  padding: 120px 0px; */
   max-width: 600px;
 }
 .popupContent .close-btn{
@@ -189,7 +191,7 @@ padding: 46px 22px 22px;
  height: 34px;
  position: absolute;
  right: 0px;
- top: 60px;
+ top: -60px;
 }
 .car-swiper{
   border-top-left-radius: 20px;
