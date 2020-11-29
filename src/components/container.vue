@@ -39,11 +39,11 @@ export default {
     this.description = brand;
     this.description1 = brand1
   },
-  methods:{
-    getCarList(){
-      this.$router.push('/car')
-    }
-  }
+  // methods:{
+  //   getCarList(){
+  //     this.$router.push('/car')
+  //   }
+  // }
 }
 </script>
 

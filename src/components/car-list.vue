@@ -16,7 +16,7 @@
         <p class="carDesc">{{carDetail[index].highlight}}</p>
       </div>
     </div>
-    <div class="popupDetail" v-show="show" @mouseover="mouseover" @mouseout="mouseout">
+    <div class="popupDetail" v-show="show && clickNum>=0" @mouseover="mouseover" @mouseout="mouseout">
       <div class="popupContent" >
         <img class="close-btn" @click="closePopup" src="../assets/c10.png"/>
         <!-- 轮播图插件的使用问题 -->
@@ -79,12 +79,12 @@ export default {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev'
           }
-        }
+      }
     }
   },
   mounted(){
     axios({
-      url:'https://www.easy-mock.com/mock/5f58738ad5906660c22dae64/example/car'
+      url:'https://mock.yonyoucloud.com/mock/16361/car-data'
     }).then(
       (res)=>{
         this.carDetail = res.data.data.modelList
@@ -96,7 +96,9 @@ export default {
   methods:{
     getClickNum(num){
       this.clickNum = num;
-      this.show = true;
+      setTimeout(()=> {
+        this.show = true;
+      },100)
     },
     closePopup(){
       this.show = false;
@@ -143,14 +145,14 @@ padding: 46px 22px 22px;
 }
 .car-items .title{
  color: #242629;
- font-size:23px ;
+ font-size:30px ;
  margin-top: 10px;
  font-family: PingFangSC-Semibold;
 
 }
 .car-items .price{
  color: #717376;
- font-size:17px ;
+ font-size:26px ;
  margin: 2px 0px;
  font-family:PingFangSC;
 }
@@ -160,7 +162,7 @@ padding: 46px 22px 22px;
  color:#ffa7a7 ;
  border: 0.5px solid #FFa7a7;
  border-radius: 5px;
- font-size: 15px;
+ font-size: 24px;
 }
 .cars div:nth-child(odd){
   margin-right: 10px;
@@ -173,12 +175,14 @@ padding: 46px 22px 22px;
   position: fixed;
   left: 0;
   top: 0;
+  padding-top: 10%;
 }
 .popupContent{
   position: relative;
-  width:429px;
+  width: 80%;
   margin: 0 auto;
   padding: 120px 0px;
+  max-width: 600px;
 }
 .popupContent .close-btn{
  width: 34px;
@@ -195,6 +199,8 @@ padding: 46px 22px 22px;
 .car-swiper img{
   width: 100%;
   height:258px ;
+  object-fit: cover;
+  max-width: 600px;
 }
 .swiper-slide{
   overflow: hidden;
@@ -218,19 +224,19 @@ padding: 46px 22px 22px;
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   color: #333;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 .car-content h2{
- font-size: 25px;
+ font-size: 40px;
 }
 .car-content h2,.car-content .price,.car-content .desc{
   margin-bottom: 6px;
 }
 .car-content .price{
-  font-size: 14px;
+  font-size: 28px;
   color: #717376;
 }
 .car-content .desc{
@@ -239,10 +245,11 @@ padding: 46px 22px 22px;
 .car-link{
   text-align: right;
   text-decoration: underline;
-  font-size: 17px;
+  
 }
 .car-link a{
  color: #408FFF;
+ font-size: 26px;
 }
 
 </style>

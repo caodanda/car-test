@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
-import container from './components/container'
+// import container from './components/container'
 import car from './components/car-list'
 
 // vueRouter使用：1.安装vue-router包：npm  install vue-router --save
@@ -11,8 +11,8 @@ Vue.config.productionTip = false
 Vue.use(Router)
 
 const routes = [
-  {path:'/',component:container},
-  {path:'/car',component:car}
+  {path:'/',component:car},
+  // {path:'/',component:car}
 ]
 const router = new Router({
   routes,
