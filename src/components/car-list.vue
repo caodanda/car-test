@@ -16,7 +16,7 @@
         <p class="carDesc">{{carDetail[index].highlight}}</p>
       </div>
     </div>
-    <div class="popupDetail" v-show="show && clickNum>=0" @mouseover="mouseover" @mouseout="mouseout">
+    <div class="popupDetail" v-show="show && clickNum>=0">
       <div class="popupContent" >
         <img class="close-btn" @click="closePopup" src="../assets/c10.png"/>
         <!-- 轮播图插件的使用问题 -->
@@ -99,16 +99,11 @@ export default {
       setTimeout(()=> {
         this.show = true;
       },100)
+      document.body.style.overflow="hidden";
     },
     closePopup(){
       this.show = false;
       this.photoNum = 0 ;
-    },
-    // 设置fixed定位的div样式，光标在div内时只能div滚动（非整个页面滚动），采用mouseover 和mouseout 事件设置body的overflow属性
-    mouseover(){
-      document.body.style.overflow="hidden";
-    },
-    mouseout(){
       document.body.style.overflow="auto";
     },
     add(){
