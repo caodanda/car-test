@@ -22,7 +22,6 @@ export default {
   text-align: left;
   color: #333;
   font-size: 20px;
-  width: 750px;
   margin:0 auto;
 }
 a{
