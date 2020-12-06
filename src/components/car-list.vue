@@ -123,6 +123,13 @@ export default {
   box-sizing: border-box;
   position: relative;
 }
+.cars{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  box-sizing: border-box;
+  padding: 20px 10px;
+}
 .carTitle{
   margin-bottom: 10px;
 }
@@ -134,7 +141,7 @@ padding: 46px 22px 22px;
   margin-bottom: 20px;
 }
 .car-items .carPhoto{
- width: 348px;
+ width: 336px;
  height: 244px;
  border-radius: 15px;
 }
@@ -160,7 +167,7 @@ padding: 46px 22px 22px;
  font-size: 24px;
 }
 .cars div:nth-child(odd){
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 .popupDetail{
   width: 100%;
@@ -177,8 +184,7 @@ padding: 46px 22px 22px;
   left: 50%;
   transform: translate(-50%,-50%);
   width: 80%;
-  /* margin: 0 auto;
-  padding: 120px 0px; */
+  height:80%;
   max-width: 600px;
 }
 .popupContent .close-btn{
@@ -221,7 +227,7 @@ padding: 46px 22px 22px;
   padding: 10px;
   box-sizing: border-box;
   text-align: center;
-  font-size: 30px;
+  font-size: 26px;
   color: #333;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
